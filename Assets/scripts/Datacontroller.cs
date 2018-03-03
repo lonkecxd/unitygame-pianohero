@@ -22,6 +22,7 @@ public class Songdata{
 [System.Serializable]
 public class User{
 	public string username;
+	public int level;
 	public List<Songdata> playList;
 }
 [System.Serializable]
@@ -52,6 +53,7 @@ public class Datacontroller : MonoBehaviour {
 			FileStream file = File.Create (Application.persistentDataPath + "/userdata.dat");
 			User user = new User ();
 			user.username = "Mary";
+			user.level = 0;
 			user.playList = new List<Songdata> (); 
 			bf.Serialize (file, user);
 			file.Close ();
@@ -125,5 +127,15 @@ public class Datacontroller : MonoBehaviour {
 		FileStream file2 = File.Create (Application.persistentDataPath + "/userdata.dat");
 		bf2.Serialize (file2, userdata);
 		file2.Close ();
+	}
+	public static void Save(){
+		BinaryFormatter bf2 = new BinaryFormatter ();
+		FileStream file2 = File.Create (Application.persistentDataPath + "/userdata.dat");
+		bf2.Serialize (file2, Datacontroller.instance.currentUser);
+		file2.Close ();
+	}
+
+	void OnDestory(){
+		Save ();
 	}
 }
