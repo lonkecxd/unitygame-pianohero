@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{000311CB-A0D3-2D3A-86B9-40AD33A2DA14}</ProjectGuid>
+    <ProjectGuid>{F4D2FF85-25DF-CDE0-1F07-A7D41792B030}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,6 +68,7 @@
      <Compile Include="Assets\scripts\DisplayData.cs" />
      <Compile Include="Assets\scripts\Note.cs" />
      <Compile Include="Assets\scripts\pause.cs" />
+     <Compile Include="Assets\scripts\Spectrum1.cs" />
      <Compile Include="Assets\scripts\user.cs" />
      <Compile Include="Assets\test.cs" />
      <Compile Include="Assets\topbox.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Xuedi\Scripts\HideOthers.cs" />
      <Compile Include="Assets\Xuedi\Scripts\ShowOthers.cs" />
      <Compile Include="Assets\Xuedi\Scripts\Spectrum.cs" />
+     <Compile Include="Assets\Xuedi\Scripts\Spectrum2.cs" />
      <Compile Include="Assets\Xuedi\Scripts\SpectrumPic.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
