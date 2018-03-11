@@ -22,10 +22,14 @@ public class pause : MonoBehaviour {
 		continueBtn.SetActive (false);
 	}
 	public void exitGame(){
-		SceneManager.LoadScene (0);
+		Datacontroller.Save ();
 	}
 	public void replayGame(){
+		Datacontroller.Save ();
 		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
+	public void IntoUser(){
+		Datacontroller.Save ();
 	}
 
 }

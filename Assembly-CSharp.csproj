@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{000311CB-A0D3-2D3A-86B9-40AD33A2DA14}</ProjectGuid>
+    <ProjectGuid>{F4D2FF85-25DF-CDE0-1F07-A7D41792B030}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,6 +54,7 @@
      <Compile Include="Assets\Activator.cs" />
      <Compile Include="Assets\border.cs" />
      <Compile Include="Assets\chengguo.cs" />
+     <Compile Include="Assets\datalevel.cs" />
      <Compile Include="Assets\DisplayScore.cs" />
      <Compile Include="Assets\gameManager.cs" />
      <Compile Include="Assets\Note2.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\scripts\DataCenter.cs" />
      <Compile Include="Assets\scripts\Datacontroller.cs" />
      <Compile Include="Assets\scripts\DisplayData.cs" />
+     <Compile Include="Assets\scripts\InitGame.cs" />
      <Compile Include="Assets\scripts\Note.cs" />
      <Compile Include="Assets\scripts\pause.cs" />
      <Compile Include="Assets\scripts\user.cs" />

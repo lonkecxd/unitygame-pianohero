@@ -26,7 +26,6 @@ public class border : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Finish") {
 			count+=Datacontroller.step;
-			int level = 0;
 			if (Datacontroller.instance.currentSong.score / count< 0.3) {
 				
 				Datacontroller.instance.currentSong.level = 1;
@@ -38,6 +37,7 @@ public class border : MonoBehaviour {
 
 			//DataCenter.WriteSong (songname,score);
 			//int hscore = DataCenter.GetHScore (songname);
+			Datacontroller.instance.currentUser.level+=Datacontroller.instance.currentSong.level;
 			int hscore = Datacontroller.instance.SaveAndGetHScore();
 
 			scoreText.gameObject.SetActive (true);
