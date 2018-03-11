@@ -48,6 +48,10 @@ public class Datacontroller : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		LoadGameData ();
+	}
+
+	void LoadGameData(){
 		if (!File.Exists (Application.persistentDataPath + "/userdata.dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Create (Application.persistentDataPath + "/userdata.dat");
@@ -65,11 +69,6 @@ public class Datacontroller : MonoBehaviour {
 		file2.Close ();
 		Datacontroller.instance.username = userdata.username;
 		Datacontroller.instance.currentUser = userdata;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	public int SaveAndGetHScore(){
