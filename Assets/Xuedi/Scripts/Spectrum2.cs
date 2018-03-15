@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spectrum2 : MonoBehaviour {
+	public float colorchangetime=2.0f;
+	public float highestcube=0f;
+	public float colorlevel=200.0f;
+	public static int changecolor;
 	float [] spectrum;
 	public GameObject cube;
-	GameObject cubesObject;
 	public int numbersOfCube = 1024;
 	private Transform[] cubes = new Transform[1024];
 	public float ridus;
@@ -56,10 +59,23 @@ public class Spectrum2 : MonoBehaviour {
 		{
 
 			float nextY =  Mathf.Lerp(y[i], spectrum[i] * height, seconds/secondsPerLerp);
-
-
+			if (nextY > highestcube)
+				highestcube = nextY;
 			cubes[i].localScale=new Vector3(1f,nextY, 1f);
 		}
 
+		StartCoroutine (wait (highestcube));
+
+	}
+
+	IEnumerator wait(float highestcube){
+		
+		if ( highestcube>colorlevel)
+			Spectrum2.changecolor = 1;
+		else           
+			Spectrum2.changecolor = 0;
+		
+		yield return new WaitForSeconds (colorchangetime);
+		highestcube = 0;
 	}
 }

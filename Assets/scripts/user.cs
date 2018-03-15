@@ -5,16 +5,12 @@ using UnityEngine.UI;
 
 public class user : MonoBehaviour {
 
-	public GameObject panel;
-	public GameObject qbutton;
-	public Text displayname;
 	public InputField inputName;
 
-	private string userName;
-	public Text me;
-	AsyncOperation async;
+	private Text me;
 	// Use this for initialization
 	void Start () {
+		me = GetComponent<Text> ();
 		me.text = Datacontroller.instance.username;
 	}
 	
@@ -24,25 +20,7 @@ public class user : MonoBehaviour {
 	}
 
 
-	public void Popup(){
-		panel.SetActive (true);
-		qbutton.SetActive (true);
-	}
-
-	public void Popout(){
-		panel.SetActive (false);
-		qbutton.SetActive (false);
-
-	}
-
-	IEnumerator SaveUName(string uname){
-		
-		yield return async;
-	}
-	public void SaveAndPopout(){
-		
-		panel.SetActive (false);
-		qbutton.SetActive (false);
+	public void SaveName(){
 		me.text = inputName.text;
 		Datacontroller.instance.SaveUsername (inputName.text);
 	}

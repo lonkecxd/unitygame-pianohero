@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piano_syq", "Assembly-CSharp.csproj", "{27197AD5-20B8-DD36-B0CC-60967B1526FB}"
+EndProject
+Project("{C4E7D397-7C65-AA05-698F-E249340293A3}") = "piano_syq", "Assembly-UnityScript.unityproj", "{8E5DD12B-628F-19BF-C740-6BBB5CA1C18C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27197AD5-20B8-DD36-B0CC-60967B1526FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27197AD5-20B8-DD36-B0CC-60967B1526FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27197AD5-20B8-DD36-B0CC-60967B1526FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27197AD5-20B8-DD36-B0CC-60967B1526FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5DD12B-628F-19BF-C740-6BBB5CA1C18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5DD12B-628F-19BF-C740-6BBB5CA1C18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5DD12B-628F-19BF-C740-6BBB5CA1C18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5DD12B-628F-19BF-C740-6BBB5CA1C18C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -21,20 +21,6 @@ public class pause : MonoBehaviour {
 		Time.timeScale=1;
 		continueBtn.SetActive (false);
 	}
-	public void exitGame(){
-		Datacontroller.Save ();
-		SceneManager.LoadScene (0);
-
-	}
-	public void replayGame(){
-		Datacontroller.Save ();
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
-
-	}
-	public void IntoUser(){
-		Datacontroller.Save ();
-		SceneManager.LoadScene (4);
-
-	}
+		
 
 }

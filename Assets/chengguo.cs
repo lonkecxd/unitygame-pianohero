@@ -9,19 +9,9 @@ public class chengguo : MonoBehaviour {
 	public GameObject parent;
 
 	public GameObject songmenu;
+	private bool isOn = false;
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
-	public void readSong(){
-		songmenu.SetActive (true);
 		List<Songdata> songList = Datacontroller.instance.currentUser.playList;
 
 		foreach (Songdata song in songList) {
@@ -30,6 +20,12 @@ public class chengguo : MonoBehaviour {
 			songItem.GetComponentsInChildren<Text> () [2].text = "等级"+song.level.ToString();
 			Instantiate (songItem, parent.transform);
 		}
-
 	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+
 }

@@ -34,10 +34,7 @@ public class border : MonoBehaviour {
 				Datacontroller.instance.currentSong.level  = 2;
 			else
 				Datacontroller.instance.currentSong.level  = 3;
-
-			//DataCenter.WriteSong (songname,score);
-			//int hscore = DataCenter.GetHScore (songname);
-			Datacontroller.instance.currentUser.level+=Datacontroller.instance.currentSong.level;
+ 
 			int hscore = Datacontroller.instance.SaveAndGetHScore();
 
 			scoreText.gameObject.SetActive (true);

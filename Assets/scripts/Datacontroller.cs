@@ -36,18 +36,21 @@ public class Datacontroller : MonoBehaviour {
 	public Songdata currentSong;
 	public User currentUser;
 	public static int step = 50;
+	public bool particle = true;
 	public string username;
 
 	void Awake(){
+		
+	}
+	// Use this for initialization
+	void Start () {
 		if (instance == null) {
 			instance = this;
 			DontDestroyOnLoad (transform.gameObject);
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
-	}
-	// Use this for initialization
-	void Start () {
+
 		if (!File.Exists (Application.persistentDataPath + "/userdata.dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Create (Application.persistentDataPath + "/userdata.dat");
@@ -78,13 +81,16 @@ public class Datacontroller : MonoBehaviour {
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Open (Application.persistentDataPath + "/userdata.dat", FileMode.Open);
 		User userdata = (User)bf.Deserialize (file);
+		userdata.level +=Datacontroller.instance.currentSong.level;
 		file.Close ();
 		bool matched = false;
 		bool found = false;
 		foreach(Songdata song in  userdata.playList) {
+			if (song == null)
+				continue;
 			if (Datacontroller.instance.currentSong.songname == song.songname) {
 				
-			if (Datacontroller.instance.currentSong.score >= song.bestscore) {
+				if (Datacontroller.instance.currentSong.score >= song.bestscore) {
 					userdata.playList.RemoveAt (userdata.playList.IndexOf( song));
 					song.bestscore = Datacontroller.instance.currentSong.score;
 					userdata.playList.Insert (0, song);
@@ -99,14 +105,17 @@ public class Datacontroller : MonoBehaviour {
 		if (!found) {
 			BinaryFormatter bf2 = new BinaryFormatter ();
 			FileStream file2 = File.Create (Application.persistentDataPath + "/userdata.dat");
+			Datacontroller.instance.currentSong.bestscore = bscore;
 			userdata.playList.Add (Datacontroller.instance.currentSong);
 			bf2.Serialize (file2, userdata);
+			Datacontroller.instance.currentUser = userdata;
 			file2.Close ();
 		}
 		else if (found&&matched) {
 			BinaryFormatter bf2 = new BinaryFormatter ();
 			FileStream file2 = File.Create (Application.persistentDataPath + "/userdata.dat");
 			bf2.Serialize (file2, userdata);
+			Datacontroller.instance.currentUser = userdata;
 			file2.Close ();
 		}
 		//Datacontroller.instance.currentSong.bestscore = bscore;
@@ -126,6 +135,7 @@ public class Datacontroller : MonoBehaviour {
 		BinaryFormatter bf2 = new BinaryFormatter ();
 		FileStream file2 = File.Create (Application.persistentDataPath + "/userdata.dat");
 		bf2.Serialize (file2, userdata);
+		Datacontroller.instance.currentUser = userdata;
 		file2.Close ();
 	}
 	public static void Save(){
@@ -135,7 +145,5 @@ public class Datacontroller : MonoBehaviour {
 		file2.Close ();
 	}
 
-	void OnDestory(){
-		Save ();
-	}
+
 }
