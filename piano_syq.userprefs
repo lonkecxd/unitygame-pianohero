@@ -2,26 +2,28 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\botton.cs">
     <Files>
-      <File FileName="Assets\border.cs" Line="38" Column="1" />
-      <File FileName="Assets\scripts\Datacontroller.cs" Line="112" Column="1" />
-      <File FileName="Assets\Activator.cs" Line="21" Column="1" />
-      <File FileName="Assets\DisplayScore.cs" Line="15" Column="1" />
-      <File FileName="Assets\scripts\user.cs" Line="10" Column="9" />
-      <File FileName="Assets\scripts\pause.cs" Line="24" Column="3" />
-      <File FileName="Assets\scripts\Display.cs" Line="9" Column="2" />
-      <File FileName="Assets\chengguo.cs" Line="30" Column="1" />
-      <File FileName="Assets\scripts\botton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Xuedi\Scripts\Spectrum2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Xuedi\Scripts\color.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\choosesong2.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\botton.cs" Line="26" Column="9" />
+      <File FileName="Assets\scripts\Display.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\choosesong.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Spectrum3.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Datacontroller.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\toggle.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\particle.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\Xuedi\Scripts\Spectrum2.cs" line="78" column="1" />
-      <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\Xuedi\Scripts\Spectrum2.cs" line="76" column="1" />
-      <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\Xuedi\Scripts\color.cs" line="18" column="1" />
       <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\border.cs" line="28" column="1" />
       <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\scripts\Datacontroller.cs" line="85" column="1" />
       <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\scripts\Datacontroller.cs" line="54" column="1" />
+      <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\scripts\choosesong2.cs" line="46" column="1" />
+      <Breakpoint file="A:\CODE\AUnity\GIT\piano_syq\Assets\scripts\toggle.cs" line="17" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Assets\scripts\choosesong2.cs" line="44" offsetX="368" offsetY="688" expression="Datacontroller.instance.particle" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

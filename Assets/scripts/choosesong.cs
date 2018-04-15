@@ -7,7 +7,7 @@ public class choosesong : MonoBehaviour {
 	public GameObject song;
 	public GameObject songmenu;
 	public GameObject bottommenu;
-
+	public Camera mycamera;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +32,7 @@ public class choosesong : MonoBehaviour {
 	public void exitMenu(){
 		songmenu.SetActive (false);
 		bottommenu.SetActive (false);
+		mycamera.gameObject.SetActive (true);
 	}
 
 }

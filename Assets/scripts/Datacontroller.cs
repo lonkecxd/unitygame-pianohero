@@ -36,7 +36,7 @@ public class Datacontroller : MonoBehaviour {
 	public Songdata currentSong;
 	public User currentUser;
 	public static int step = 50;
-	public bool particle = true;
+	public bool []particles = new bool[3];
 	public string username;
 
 	void Awake(){

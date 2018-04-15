@@ -22,4 +22,8 @@ public class botton : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+	public void fadeout(){
+		GetComponent<Animator> ().SetTrigger ("OUT");
+	}
 }

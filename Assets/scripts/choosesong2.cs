@@ -8,7 +8,12 @@ public class choosesong2 : MonoBehaviour {
 	public GameObject songmenu;
 	public GameObject bottommenu;
 	public AudioSource music;
+	public Camera mycamera;
 
+	public GameObject cubes;
+	public GameObject pa;
+	public GameObject pb;
+	public GameObject pc;
 
 	// Use this for initialization
 	void Start () {
@@ -36,5 +41,13 @@ public class choosesong2 : MonoBehaviour {
 	public void exitMenu(){
 		songmenu.SetActive (false);
 		bottommenu.SetActive (false);
+		mycamera.gameObject.SetActive (true);
+		cubes.SetActive (true);
+		if (Datacontroller.instance.particles [0])
+			pa.SetActive (true);
+		if (Datacontroller.instance.particles [1])
+			pb.SetActive (true);
+		if (Datacontroller.instance.particles [2])
+			pc.SetActive(true);
 	}
 }

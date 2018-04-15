@@ -6,7 +6,7 @@ public class Spectrum2 : MonoBehaviour {
 	public float colorchangetime=2.0f;
 	public float highestcube=0f;
 	public float colorlevel=200.0f;
-	public static int changecolor;
+	public static int changecolor=-1;
 	float [] spectrum;
 	public GameObject cube;
 	public int numbersOfCube = 1024;
@@ -15,12 +15,12 @@ public class Spectrum2 : MonoBehaviour {
 	public float secondsPerLerp=0.2f;
 	public float height = 20f;
 	float seconds= 0f;
-	AudioSource au;
+	//AudioSource au;
 	float[] y;
 	// Use this for initialization
 	void Start () {
-		au = GetComponent<AudioSource> ();
-		height = numbersOfCube *6;
+		//au = GetComponent<AudioSource> ();
+		height = numbersOfCube *3;
 		seconds = secondsPerLerp;
 		spectrum = new float[numbersOfCube];
 		//cubes = new GameObject[numbersOfCube];
@@ -46,7 +46,7 @@ public class Spectrum2 : MonoBehaviour {
 		//spectrum = AudioListener.GetSpectrumData(64,0,FFTWindow.Hamming);
 		//Debug.Log(cubes[127].GetComponent<Transform>().localScale.y + "  "+spectrum[127]);
 		//Debug.Log(Mathf.Lerp(cubes[127].GetComponent<Transform>().localScale.y, spectrum[127], 0.5f)*20);
-		au = gameManager.doremi;
+		//au = gameManager.doremi;
 		if (seconds >= secondsPerLerp)
 		{
 			AudioListener.GetSpectrumData(spectrum, 0,FFTWindow.Hamming);
@@ -58,24 +58,28 @@ public class Spectrum2 : MonoBehaviour {
 		for (int i=0;i<numbersOfCube;i++)
 		{
 
-			float nextY =  Mathf.Lerp(y[i], spectrum[i] * height, seconds/secondsPerLerp);
-			if (nextY > highestcube)
+			float nextY =  Mathf.Clamp(Mathf.Lerp(y[i], spectrum[i] * 1000, seconds/secondsPerLerp),0,10);
+			if (Spectrum2.changecolor == -1 && nextY > highestcube) {
 				highestcube = nextY;
+			}
 			cubes[i].localScale=new Vector3(1f,nextY, 1f);
 		}
+		if (Spectrum2.changecolor == -1) {
+			if (highestcube > colorlevel) {
+				Spectrum2.changecolor = 1;
+				highestcube = 0;
+			} else {
+				Spectrum2.changecolor = 0;
+				highestcube = 0;
+			}
+			StartCoroutine (wait (highestcube));
 
-		StartCoroutine (wait (highestcube));
+		}
 
 	}
 
 	IEnumerator wait(float highestcube){
-		
-		if ( highestcube>colorlevel)
-			Spectrum2.changecolor = 1;
-		else           
-			Spectrum2.changecolor = 0;
-		
 		yield return new WaitForSeconds (colorchangetime);
-		highestcube = 0;
+		Spectrum2.changecolor = -1;
 	}
 }
