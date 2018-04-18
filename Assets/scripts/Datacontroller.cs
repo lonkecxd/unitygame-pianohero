@@ -40,7 +40,7 @@ public class Datacontroller : MonoBehaviour {
 	public string username;
 
 	void Awake(){
-		
+		particles [0] = particles [1] = particles [2] = true;;
 	}
 	// Use this for initialization
 	void Start () {

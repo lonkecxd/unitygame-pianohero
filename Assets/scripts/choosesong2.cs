@@ -43,6 +43,9 @@ public class choosesong2 : MonoBehaviour {
 		bottommenu.SetActive (false);
 		mycamera.gameObject.SetActive (true);
 		cubes.SetActive (true);
+		pa.SetActive (false);
+		pb.SetActive (false);
+		pc.SetActive(false);
 		if (Datacontroller.instance.particles [0])
 			pa.SetActive (true);
 		if (Datacontroller.instance.particles [1])

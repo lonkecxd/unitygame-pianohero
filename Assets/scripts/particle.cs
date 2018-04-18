@@ -10,6 +10,19 @@ public class particle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (gameObject.tag == "a" && Datacontroller.instance.particles [0])
+			this.gameObject.SetActive (true);
+		else
+			this.gameObject.SetActive (false);
+	
+		if (gameObject.tag == "b" && Datacontroller.instance.particles [1])
+			this.gameObject.SetActive (true);
+		else
+			this.gameObject.SetActive (false);
+
+		if (gameObject.tag == "c" && Datacontroller.instance.particles [2])
+			this.gameObject.SetActive (true);
+		else
+			this.gameObject.SetActive (false);
 	}
 }
